@@ -21,17 +21,40 @@ bool LOF::Search(int x)
 
 void LOF::Insert(int NewFileNumber)
 {
+    
     LOF_node *new_node = new LOF_node();
     new_node->FileNumber=NewFileNumber;
     new_node->next=0;
 
-    LOF_node *current=first;
-
-    //We know that the last Lof_node, next member has the value zero/NULL
-    while (current!=nullptr)
+    if (first==nullptr)
     {
-        current = current->next;
+        new_node->next=nullptr;
+        first=new_node;
     }
-    current->next= new_node;
+    else if (NewFileNumber<first->FileNumber)
+    {
+        new_node->next=first;
+        first=new_node;
+    }
+    else if (NewFileNumber>first->FileNumber)
+    {
+        LOF_node *current=first;
+
+        while (current->next != nullptr && current->next->FileNumber < NewFileNumber)
+        {
+           current=current->next;
+        }
+        new_node->next-current->next;
+        current->next=new_node;
+
+    }
+    
+    
+
+    void LOF ::MyList(void)
+    {
+        LOF_node * current; 
+    }
+    
     
 }
