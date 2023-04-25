@@ -1,4 +1,7 @@
 #include"lof.h"
+#include<iostream>
+using namespace std;
+
 
 bool LOF::Search(int x)
 {
@@ -20,6 +23,7 @@ bool LOF::Search(int x)
 
 
 void LOF::Insert(int NewFileNumber)
+
 {
     
     LOF_node *new_node = new LOF_node();
@@ -44,17 +48,22 @@ void LOF::Insert(int NewFileNumber)
         {
            current=current->next;
         }
-        new_node->next-current->next;
+        new_node->next=current->next;
         current->next=new_node;
 
     }
-    
-    
+}
 
-    void LOF ::MyList(void)
+
+void LOF::PrintMyList(void)
+{
+
+    LOF_node * current= first;
+    while (current!=nullptr)
     {
-        LOF_node * current; 
+        cout<<current->FileNumber<<endl;
+        current= current->next;
     }
-    
-    
+     
+     
 }

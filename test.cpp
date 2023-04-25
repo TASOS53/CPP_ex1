@@ -12,7 +12,7 @@ int main(void)
     l1->Insert(21);
     l1->Insert(44);
     l1->Insert(20);
-    
+    l1->PrintMyList();
     //l1->Print(); PREPEI NA THN YLOPOIHSO 
     //if(l1->Search(4))cout<<"bla bla";
     //else cout<<"ha ha";

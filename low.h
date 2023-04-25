@@ -1,1 +1,1 @@
-class LOW{}
+class LOW{};

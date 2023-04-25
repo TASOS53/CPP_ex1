@@ -7,7 +7,7 @@ class LOF
         LOF (){first=nullptr;}
         bool Search(int x);
         void Insert(int k );
-        void MyList(void);
+        void PrintMyList(void);
     private:
         LOF_node *first;
 };
