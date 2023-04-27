@@ -1,6 +1,6 @@
 //print characters from .txt files , from folder input , with the defined order by the orederOfFiles.cpp file.
 
-
+#include<string>
 #include<iostream>
 #include<fstream>
 using namespace std;
@@ -46,13 +46,7 @@ int main()
     }
 
 
-    class LOW_node
-    {
-        string word;
-        int numberOfTimes; //How many times the word has been found in the .txt files
-        //LOF_node *pntr;  // a pointer to a list LOF(list of words)
-        LOW_node *next_LOW_node; //Δείκτης σε επόμενο κόμβο της λίστας LOW
-    };
+    
 
     
 
