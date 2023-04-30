@@ -8,7 +8,6 @@ bool LOW::Search(string x, LOW_node *y)
 {
     y=nullptr;
     LOW_node *current=first;
-    int index;
     while(current!=nullptr)//οσο το current δεν εχει τιμη μηδεν(δηλαδή δεν φτάσαμε στον τελευταίο κόμβο της λίστας) και 
     {
         if (current->word.compare(x)==0 ) 
@@ -19,7 +18,6 @@ bool LOW::Search(string x, LOW_node *y)
         else
         {    
             current= current->next;
-            index ++;
         }
     }
     return false;
@@ -27,13 +25,16 @@ bool LOW::Search(string x, LOW_node *y)
  
 }
 
-void LOW::Insert(string NewWord)
+void LOW::Insert(string NewWord, int fileNumber)
 
 {
     
     LOW_node *new_node = new LOW_node();
     new_node->word=NewWord;
-    new_node->next=0;
+    new_node->numberOfFiles=1; //Την πρωτη φορά που θα καλέσω την insert θα είναι η πρώτη φορά που θα βρω την λέξη.
+    new_node->lof= new LOF();
+    new_node->lof->Insert(fileNumber);
+    
 
     if (first==nullptr)
     {
@@ -65,7 +66,10 @@ void LOW::PrintMyList(void)
     LOW_node * current= first;
     while (current!=nullptr)
     {
-        cout<<current->word<<endl;
+        //cout<<current->word<<' '<<current->numberOfFiles<<endl;
+        cout<<current->word<<" has been found in "<<current->numberOfFiles<<" files." << "And the files are: ";
+        current->lof->PrintMyList();
+        cout<<endl;
         current= current->next;
     }
      
@@ -75,9 +79,9 @@ void LOW::PrintMyList(void)
 
 void LOW :: update (LOW_node*y, int FileNumber)
 {
-   if(y->object_lof.Search(FileNumber)==false) 
+   if(y->lof->Search(FileNumber)==false) 
    { 
-        y->object_lof.Insert(FileNumber);
+        y->lof->Insert(FileNumber);
         y->numberOfFiles++;
    }
 

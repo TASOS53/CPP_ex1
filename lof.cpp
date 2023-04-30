@@ -6,14 +6,12 @@ using namespace std;
 bool LOF::Search(int x)
 {
     LOF_node *current=first;
-    int index;
     while(current!=nullptr)//οσο το current δεν εχει τιμη μηδεν(δηλαδή δεν φτάσαμε στον τελευταίο κόμβο της λίστας) και 
     {
         if (current->FileNumber==x)   return true;//Το βρήκα!
         else
         {    
             current= current->next;
-            index ++;
         }
     }
     return false;

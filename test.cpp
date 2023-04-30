@@ -17,13 +17,6 @@ int main(void)
     l1->PrintMyList();
 
     
-    l2->Insert("ARIS");
-    l2->Insert("VOLOS");
-    l2->Insert("PAO");
-    l2->Insert("AEK");
-    
-    l2->Insert("PAOK");
-    l2->Insert("OSFP");
     l2->PrintMyList();
 
     //l1->Print(); PREPEI NA THN YLOPOIHSO 

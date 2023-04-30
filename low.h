@@ -9,7 +9,7 @@ class LOW
 {
     public:
         bool Search(string x, LOW_node* y);
-        void Insert(string k );
+        void Insert(string k, int fileNumber );
         void PrintMyList(void);
         void update(LOW_node* y, int FileNumber);
         
@@ -24,14 +24,14 @@ class LOW_node
         public:
             LOW_node ()
             {
-                word=nullptr;
+//               word=nullptr;
                 numberOfFiles=0;
                 next=nullptr;
-                
+                lof=nullptr;
             };
             string word;
             int numberOfFiles; //Το πλήθος των αρχείων στα οποία βρέθηκε η λέξη 
-            LOF object_lof;
+            LOF *lof;
             LOW_node *next;
         
     };
