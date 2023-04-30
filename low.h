@@ -8,11 +8,13 @@ class LOW_node;
 class LOW
 {
     public:
-        bool Search(string x, LOW_node* y);
+        LOW(){first=nullptr;}
+        ~LOW(){};
+        LOW_node * Search(string x);
         void Insert(string k, int fileNumber );
         void PrintMyList(void);
         void update(LOW_node* y, int FileNumber);
-        
+        void Delete();
     private:
         LOW_node *first;
         
@@ -24,11 +26,11 @@ class LOW_node
         public:
             LOW_node ()
             {
-//               word=nullptr;
                 numberOfFiles=0;
                 next=nullptr;
                 lof=nullptr;
             };
+            ~LOW_node (){};
             string word;
             int numberOfFiles; //Το πλήθος των αρχείων στα οποία βρέθηκε η λέξη 
             LOF *lof;

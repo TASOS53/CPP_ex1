@@ -4,23 +4,23 @@
 using namespace std;
 
 
-bool LOW::Search(string x, LOW_node *y)
+LOW_node* LOW::Search(string x)
 {
-    y=nullptr;
+    LOW_node *y=nullptr;
     LOW_node *current=first;
     while(current!=nullptr)//οσο το current δεν εχει τιμη μηδεν(δηλαδή δεν φτάσαμε στον τελευταίο κόμβο της λίστας) και 
     {
         if (current->word.compare(x)==0 ) 
         {  
             y=current; //ο δείκτης y θα με βοηθήσει να ξέρω σε ποια διεύθυνση ειναι αποθηκευμένος ο κόμβος Low_node στον οποίο βρέθηκε η λέξη που εψαχνα
-            return true;//Το βρήκα!
+            return y;//Το βρήκα!
         }
         else
         {    
             current= current->next;
         }
     }
-    return false;
+    return y;
     
  
 }
@@ -86,3 +86,18 @@ void LOW :: update (LOW_node*y, int FileNumber)
    }
 
 }
+
+
+void LOW::Delete(void)
+{
+    LOW_node *current=first;
+    current->lof->Delete();
+    while (current!=nullptr)
+    {
+        current=current->next;
+        delete first;
+        first=current;
+        current->lof->Delete();
+    }
+}
+

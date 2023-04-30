@@ -65,3 +65,14 @@ void LOF::PrintMyList(void)
      
      
 }
+
+void LOF::Delete(void)
+{
+    LOF_node * current=first;
+    while(current!=nullptr)
+    {
+        current=current->next;
+        delete first;
+        first=current;
+    }
+}
