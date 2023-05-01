@@ -66,7 +66,6 @@ void LOW::PrintMyList(void)
     LOW_node * current= first;
     while (current!=nullptr)
     {
-        //cout<<current->word<<' '<<current->numberOfFiles<<endl;
         cout<<current->word<<" has been found in "<<current->numberOfFiles<<" files." << "And the files are: ";
         current->lof->PrintMyList();
         cout<<endl;
