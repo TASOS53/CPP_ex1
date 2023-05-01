@@ -28,11 +28,11 @@ int main()
     
     LOW_node *y=nullptr ;
     
-    for(i=0; i<100; i++)
+    for(i=0; i<3; i++)
     {
         s2=to_string(orderOfFiles[i]);
         pathName= s1+s2+s4;
-        //cout<< pathName<<endl;
+       // cout<< pathName<<endl;
     
     
     
@@ -68,7 +68,19 @@ int main()
     
     while ( !cin.eof() )
     {
-        cout<<"the word is : "<<test_word<<endl;
+        if((y=(l2->Search(test_word)))==nullptr)
+        {
+            cout<<"The word "<<test_word<<" is not found."<<endl;
+        }
+        else
+        {
+            cout<<"The word "<<test_word<<" appears in "<<y->numberOfFiles<< " documents."<<endl;
+            cout<<"These documents are: ";
+            y->lof->PrintMyList();
+            cout<<endl;
+
+        }
+        //cout<<"the word is : "<<test_word<<endl;
         cout<<"Search for a word "<<endl;
         cin>>test_word;
     }

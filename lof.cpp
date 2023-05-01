@@ -59,7 +59,12 @@ void LOF::PrintMyList(void)
     LOF_node * current= first;
     while (current!=nullptr)
     {
-        cout<<current->FileNumber<<endl;
+        cout<<current->FileNumber;
+        if(current->next!=nullptr)
+        {
+            cout<<",";//Avoid last comma
+        }
+        else cout<<".";
         current= current->next;
     }
      
