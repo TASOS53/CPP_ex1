@@ -97,7 +97,6 @@ void LOW::Delete(void)
         current=current->next;
         delete first;
         first=current;
-        current->lof->Delete();
+        if (current!=nullptr) current->lof->Delete();
     }
 }
-

@@ -1,5 +1,6 @@
 //print characters from .txt files , from folder input , with the defined order by the orederOfFiles.cpp file.
 #include"low.h"
+//#include<windows.h>
 #include<string>
 #include<iostream>
 #include<fstream>
@@ -14,10 +15,10 @@ int main()
     88, 59, 1,32, 3, 73, 78, 42, 16, 36, 7, 47, 12, 67, 85, 64, 28, 52, 84, 
     98, 69, 41, 63, 72, 46, 20, 18, 100, 97, 99, 23, 38, 35, 91, 8, 5};
     
-
+    
     //int orderOfFiles[] = {1000,1001} ;
     int i;
-    string pathName;
+    string pathName,test_word;
     string s1=".\\input\\";
     string s2;
     string s4 =".txt";
@@ -31,7 +32,7 @@ int main()
     {
         s2=to_string(orderOfFiles[i]);
         pathName= s1+s2+s4;
-        cout<< pathName<<endl;
+        //cout<< pathName<<endl;
     
     
     
@@ -59,14 +60,27 @@ int main()
         FileToBeRead.close();
     
     }
-    l2->PrintMyList();
+    //l2->PrintMyList();
 
-
-
+    cout<<"All words have been loaded."<<endl;
+    cout<<"Search for a word"<<endl;
+    cin>>test_word;
     
-     
+    while ( !cin.eof() )
+    {
+        cout<<"the word is : "<<test_word<<endl;
+        cout<<"Search for a word "<<endl;
+        cin>>test_word;
+    }
 
+
+    //cout <<"Before delete" <<endl;
+    //_sleep(20000);
+
+    l2->Delete();
+
+    //cout <<"After delete" <<endl;
+    //_sleep(20000);
 
    return 0;
-
 }
